@@ -14,3 +14,5 @@ Docker build for EOSio
 
     alias cleos='docker exec -it eosio /root/eosio/eos/build/programs/cleos/cleos -u https://api.eosargentina.io'
     cleos get info
+
+A compiled version is available on Docker Hub: https://hub.docker.com/repository/docker/pixelnoob/eosio 
