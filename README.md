@@ -2,7 +2,9 @@
 Docker build for EOSio
 
 ### Build
-    docker build -t eosio:latest
+    git clone https://github.com/PixelNoob/EOSio-Docker
+    cd EOSio-Docker
+    docker build -t eosio:latest .
     
 ### Run
 
