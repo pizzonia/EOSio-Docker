@@ -7,11 +7,11 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
                 zlib1g-dev sudo ruby libusb-1.0-0-dev libcurl4-gnutls-dev \
                 pkg-config patch clang llvm-7-dev && rm -rf /var/lib/apt/lists/*
 
-RUN  mkdir -p ~/eosio && \
+RUN  mkdir ~/eosio && \
      cd ~/eosio && \
      git clone https://github.com/EOSIO/eos && \
      cd ~/eosio/eos && \
      git checkout v2.0.7 && \
      git submodule update --init --recursive && \
      cd scripts && \
-     ./eosio_build.sh -o Release -s EOS -y
+     ./eosio_build.sh
