@@ -14,4 +14,4 @@ RUN  mkdir ~/eosio && \
      git checkout v2.0.7 && \
      git submodule update --init --recursive && \
      cd scripts && \
-     ./eosio_build.sh
+     ./eosio_build.sh -y
