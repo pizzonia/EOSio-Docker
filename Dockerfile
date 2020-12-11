@@ -11,7 +11,7 @@ RUN  mkdir -p ~/eosio && \
      cd ~/eosio && \
      git clone https://github.com/EOSIO/eos && \
      cd ~/eosio/eos && \
-     git checkout v2.0.5 && \
+     git checkout v2.0.7 && \
      git submodule update --init --recursive && \
      cd scripts && \
      ./eosio_build.sh -o Release -s EOS -y
