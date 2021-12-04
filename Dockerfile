@@ -1,17 +1,16 @@
 FROM ubuntu:18.04
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
-    apt-get -y install git make bzip2 automake libbz2-dev libssl-dev doxygen \
-                graphviz libgmp3-dev autotools-dev libicu-dev python2.7 \
-                python2.7-dev python3 python3-dev autoconf libtool curl \
-                zlib1g-dev sudo ruby libusb-1.0-0-dev libcurl4-gnutls-dev \
-                pkg-config patch clang llvm-7-dev && rm -rf /var/lib/apt/lists/*
+WORKDIR /root
 
-RUN  mkdir ~/eosio && \
-     cd ~/eosio && \
-     git clone https://github.com/EOSIO/eos && \
-     cd ~/eosio/eos && \
-     git checkout v2.0.7 && \
-     git submodule update --init --recursive && \
-     cd scripts && \
-     ./eosio_build.sh -y
+RUN  apt-get update 
+RUN  apt-get install -y wget less tmux tree net-tools iproute2 nano
+
+RUN wget https://github.com/eosio/eos/releases/download/v2.1.0/eosio_2.1.0-1-ubuntu-18.04_amd64.deb 
+RUN apt-get install -y ~/eosio_2.1.0-1-ubuntu-18.04_amd64.deb
+
+RUN wget https://github.com/eosio/eosio.cdt/releases/download/v1.8.0/eosio.cdt_1.8.0-1-ubuntu-18.04_amd64.deb 
+RUN apt-get install -y ~/eosio.cdt_1.8.0-1-ubuntu-18.04_amd64.deb
+
+
+
+
